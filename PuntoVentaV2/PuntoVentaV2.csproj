@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECF5FEAF-A0C2-4D56-9ED8-AB21D53D9EAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PuntoVentaV2</RootNamespace>
+    <AssemblyName>PuntoVentaV2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.2.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.3.1\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_CompraRealizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_CompraRealizada.Designer.cs">
+      <DependentUpon>ALT_CompraRealizada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_FilasEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_FilasEliminar.Designer.cs">
+      <DependentUpon>ALT_FilasEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_NoHayID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_NoHayID.Designer.cs">
+      <DependentUpon>ALT_NoHayID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_NoHayProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ALT_NoHayProductos.Designer.cs">
+      <DependentUpon>ALT_NoHayProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_CambioExitoso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_CambioExitoso.Designer.cs">
+      <DependentUpon>ALT_CambioExitoso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_ContrasenaNoCoincide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_ContrasenaNoCoincide.Designer.cs">
+      <DependentUpon>ALT_ContrasenaNoCoincide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_FaltaCapturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_FaltaCapturar.Designer.cs">
+      <DependentUpon>ALT_FaltaCapturar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_Incersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_Incersion.Designer.cs">
+      <DependentUpon>ALT_Incersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_RegistroYaExiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_RegistroYaExiste.Designer.cs">
+      <DependentUpon>ALT_RegistroYaExiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ProductoNoEncontrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_CAJERO\ProductoNoEncontrado.Designer.cs">
+      <DependentUpon>ProductoNoEncontrado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_SeEliminoConExito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_SeEliminoConExito.Designer.cs">
+      <DependentUpon>ALT_SeEliminoConExito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_SeleccionNoValida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\ALT_GERENTE\ALT_SeleccionNoValida.Designer.cs">
+      <DependentUpon>ALT_SeleccionNoValida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cajero\CAJ_Interfaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cajero\CAJ_Interfaz.Designer.cs">
+      <DependentUpon>CAJ_Interfaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cajero\CAJ_MetodoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cajero\CAJ_MetodoPago.Designer.cs">
+      <DependentUpon>CAJ_MetodoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cajero\CAJ_TarjetaAprobada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cajero\CAJ_TarjetaAprobada.Designer.cs">
+      <DependentUpon>CAJ_TarjetaAprobada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cajero\CAJ_TarjetaRechazada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cajero\CAJ_TarjetaRechazada.Designer.cs">
+      <DependentUpon>CAJ_TarjetaRechazada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cajero\Clase_Con\Conexion.cs" />
+    <Compile Include="Cajero\TarjetaIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cajero\TarjetaIn.Designer.cs">
+      <DependentUpon>TarjetaIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConexionL.cs" />
+    <Compile Include="Control.cs" />
+    <Compile Include="Gerencia\ClassEmpleado.cs" />
+    <Compile Include="Gerencia\ClassProducto.cs" />
+    <Compile Include="Gerencia\ClassTicket.cs" />
+    <Compile Include="Gerencia\ClassUsuario.cs" />
+    <Compile Include="Gerencia\Dar de Baja\FRM_GER_DarBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\Dar de Baja\FRM_GER_DarBaja.Designer.cs">
+      <DependentUpon>FRM_GER_DarBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\Dar de Baja\FRM_GER_DarBajaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\Dar de Baja\FRM_GER_DarBajaEmpleado.Designer.cs">
+      <DependentUpon>FRM_GER_DarBajaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\Dar de Baja\FRM_GER_DarBajaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\Dar de Baja\FRM_GER_DarBajaUsuario.Designer.cs">
+      <DependentUpon>FRM_GER_DarBajaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\dbEmpleado.cs" />
+    <Compile Include="Gerencia\dbProducto.cs" />
+    <Compile Include="Gerencia\dbTickets.cs" />
+    <Compile Include="Gerencia\dbUsuario.cs" />
+    <Compile Include="Gerencia\FER_GER_ListaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FER_GER_ListaEmpleados.Designer.cs">
+      <DependentUpon>FER_GER_ListaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_AddProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_AddProductos.Designer.cs">
+      <DependentUpon>FRM_GER_AddProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_AgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_AgregarEmpleado.Designer.cs">
+      <DependentUpon>FRM_GER_AgregarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_AgregarUsuario.Designer.cs">
+      <DependentUpon>FRM_GER_AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_Empleados.Designer.cs">
+      <DependentUpon>FRM_GER_Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_Menu.Designer.cs">
+      <DependentUpon>FRM_GER_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_Reportes.Designer.cs">
+      <DependentUpon>FRM_GER_Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_RestablecerPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia\FRM_GER_RestablecerPass.Designer.cs">
+      <DependentUpon>FRM_GER_RestablecerPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+    <EmbeddedResource Include="Alertas\ALT_CAJERO\ALT_CompraRealizada.resx">
+      <DependentUpon>ALT_CompraRealizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_CAJERO\ALT_FilasEliminar.resx">
+      <DependentUpon>ALT_FilasEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_CAJERO\ALT_NoHayID.resx">
+      <DependentUpon>ALT_NoHayID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_CAJERO\ALT_NoHayProductos.resx">
+      <DependentUpon>ALT_NoHayProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_CambioExitoso.resx">
+      <DependentUpon>ALT_CambioExitoso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_ContrasenaNoCoincide.resx">
+      <DependentUpon>ALT_ContrasenaNoCoincide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_FaltaCapturar.resx">
+      <DependentUpon>ALT_FaltaCapturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_Incersion.resx">
+      <DependentUpon>ALT_Incersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_RegistroYaExiste.resx">
+      <DependentUpon>ALT_RegistroYaExiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_CAJERO\ProductoNoEncontrado.resx">
+      <DependentUpon>ProductoNoEncontrado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_SeEliminoConExito.resx">
+      <DependentUpon>ALT_SeEliminoConExito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\ALT_GERENTE\ALT_SeleccionNoValida.resx">
+      <DependentUpon>ALT_SeleccionNoValida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cajero\CAJ_Interfaz.resx">
+      <DependentUpon>CAJ_Interfaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cajero\CAJ_MetodoPago.resx">
+      <DependentUpon>CAJ_MetodoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cajero\CAJ_TarjetaAprobada.resx">
+      <DependentUpon>CAJ_TarjetaAprobada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cajero\CAJ_TarjetaRechazada.resx">
+      <DependentUpon>CAJ_TarjetaRechazada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cajero\TarjetaIn.resx">
+      <DependentUpon>TarjetaIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\Dar de Baja\FRM_GER_DarBaja.resx">
+      <DependentUpon>FRM_GER_DarBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\Dar de Baja\FRM_GER_DarBajaEmpleado.resx">
+      <DependentUpon>FRM_GER_DarBajaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\Dar de Baja\FRM_GER_DarBajaUsuario.resx">
+      <DependentUpon>FRM_GER_DarBajaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FER_GER_ListaEmpleados.resx">
+      <DependentUpon>FER_GER_ListaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_AddProductos.resx">
+      <DependentUpon>FRM_GER_AddProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_AgregarEmpleado.resx">
+      <DependentUpon>FRM_GER_AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_AgregarUsuario.resx">
+      <DependentUpon>FRM_GER_AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_Empleados.resx">
+      <DependentUpon>FRM_GER_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_Menu.resx">
+      <DependentUpon>FRM_GER_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_Reportes.resx">
+      <DependentUpon>FRM_GER_Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia\FRM_GER_RestablecerPass.resx">
+      <DependentUpon>FRM_GER_RestablecerPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imgs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Alertas\CustomMessageBox\Resources\chat.png" />
+    <Content Include="Alertas\CustomMessageBox\Resources\error.png" />
+    <Content Include="Alertas\CustomMessageBox\Resources\exclamation.png" />
+    <Content Include="Alertas\CustomMessageBox\Resources\information.png" />
+    <Content Include="Alertas\CustomMessageBox\Resources\question.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
